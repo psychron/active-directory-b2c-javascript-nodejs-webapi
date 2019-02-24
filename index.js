@@ -9,9 +9,9 @@ var passport = require("passport");
 var BearerStrategy = require('passport-azure-ad').BearerStrategy;
 
 // TODO: Update the first 3 variables
-var tenantID = "fabrikamb2c.onmicrosoft.com";
-var clientID = "25eef6e4-c905-4a07-8eb4-0d08d5df8b3f";
-var policyName = "B2C_1_SUSI";
+var tenantID = "soapasia.onmicrosoft.com";
+var clientID = "89ae130d-923c-4f08-b1fc-e8e55814b90f";
+var policyName = "B2C_1_signupsignin1";
 
 var options = {
     identityMetadata: "https://login.microsoftonline.com/" + tenantID + "/v2.0/.well-known/openid-configuration/",
@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get("/hello",
+app.get("/sprouts",
     passport.authenticate('oauth-bearer', {session: false}),
     function (req, res) {
         var claims = req.authInfo;
